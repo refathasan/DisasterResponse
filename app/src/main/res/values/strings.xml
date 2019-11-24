@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DisasterResponse</string>
+    <string name="mbl_number">মোবাইল নাম্বার দিন</string>
+    <string name="log_reg"> লগিন / রেজিস্ট্রেশন </string>
 </resources>
