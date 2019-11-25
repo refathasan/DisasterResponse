@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,6 +16,7 @@
            android:layout_height="wrap_content"
            android:id="@+id/edt_mbl_number"
            android:hint="@string/mbl_number"
+           android:fontFamily="@font/punarbhaba"
            android:textColorHint="@color/colorAccent"
            android:textAlignment="center"/>
         <Button
@@ -25,11 +26,12 @@
             android:textStyle="bold"
             android:padding="5dp"
             android:layout_margin="5dp"
-            android:text="@string/log_reg"/>
+            android:text="@string/log_reg"
+            android:fontFamily="@font/punarbhaba"/>
         <ProgressBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/progressbar"
-            android:visibility="invisible"/>
+            android:visibility="gone"/>
     </LinearLayout>
 </RelativeLayout>

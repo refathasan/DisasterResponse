@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    android:background="#90ee90"
+    tools:context=".HomeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="100dp">
+
+        <LinearLayout
+            android:id="@+id/lin1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/btn_disaster_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:background="@drawable/button_bg_transparent"
+                android:drawableTop="@drawable/icon_1"
+                android:text="@string/disaster_info"
+                android:textAlignment="center"
+                android:fontFamily="@font/punarbhaba"/>
+
+            <Button
+                android:id="@+id/btn_disaster_ask_help"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:background="@drawable/button_bg_transparent"
+                android:drawableTop="@drawable/icon_2"
+                android:text="@string/ask_for_help"
+                android:textAlignment="center"
+                android:fontFamily="@font/punarbhaba"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/btn_important_phn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:background="@drawable/button_bg_transparent"
+                android:drawableTop="@drawable/icon_3"
+                android:text="@string/important_phn_number"
+                android:textAlignment="center"
+                android:fontFamily="@font/punarbhaba"/>
+
+            <Button
+                android:id="@+id/btn_hotline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:background="@drawable/button_bg_transparent"
+                android:drawableTop="@drawable/icon_4"
+                android:text="@string/hotline"
+                android:textAlignment="center"
+                android:fontFamily="@font/punarbhaba"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/btn_news"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:background="@drawable/button_bg_transparent"
+                android:drawableTop="@drawable/icon_5"
+                android:text="@string/news"
+                android:textAlignment="center"
+                android:fontFamily="@font/punarbhaba"/>
+
+            <Button
+                android:id="@+id/btn_others"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:background="@drawable/button_bg_transparent"
+                android:drawableTop="@drawable/icon_6"
+                android:text="@string/others"
+                android:textAlignment="center"
+                android:fontFamily="@font/punarbhaba"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

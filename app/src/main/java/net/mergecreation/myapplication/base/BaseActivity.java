@@ -3,6 +3,7 @@ package net.mergecreation.myapplication.base;
 import android.Manifest;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.widget.Toast;
@@ -24,6 +25,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         }else{
             requestInternetPermission();
         }
+
     }
 
     private void requestInternetPermission() {
