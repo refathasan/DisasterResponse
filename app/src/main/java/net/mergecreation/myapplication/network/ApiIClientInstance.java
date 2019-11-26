@@ -5,10 +5,10 @@ import net.mergecreation.myapplication.utils.Utils;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ApiInstance {
-    private static Retrofit retrofit=null;
+public class ApiIClientInstance {
+    private static Retrofit retrofit;
 
-    public static Retrofit getInstance(){
+    public static synchronized Retrofit getInstance(){
         if(retrofit==null)
         {
             Retrofit retrofit = new Retrofit.Builder()

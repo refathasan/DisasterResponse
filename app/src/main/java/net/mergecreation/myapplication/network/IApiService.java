@@ -6,6 +6,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface IApiService {
-    @GET("getAllDisasterType")
-    Call<DisasterTypeModel>getAllDisasterType();
+    @GET("getDisasterTypeData")
+    Call<DisasterTypeModel> getDisasterTypeData();
 }

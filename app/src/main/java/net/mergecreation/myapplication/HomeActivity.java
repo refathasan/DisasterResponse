@@ -29,7 +29,7 @@ public class HomeActivity extends BaseActivity {
                 //Toast.makeText(HomeActivity.this, R.string.disaster_info, Toast.LENGTH_SHORT).show();
                 intent = new Intent(HomeActivity.this,DisasterTypeActivity.class);
                 startActivity(intent);
-                finish();
+                //finish();
             }
         });
         btnAskForHelp.setOnClickListener(new View.OnClickListener() {
