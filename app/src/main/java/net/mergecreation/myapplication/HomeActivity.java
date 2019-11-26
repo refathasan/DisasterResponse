@@ -2,6 +2,7 @@ package net.mergecreation.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +12,7 @@ import net.mergecreation.myapplication.base.BaseActivity;
 
 public class HomeActivity extends BaseActivity {
     private Button btnDisasterInfo, btnAskForHelp, btnImportantPhoneNumber, btnHotLine, btnNews, btnOthers;
-
+    private Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +26,10 @@ public class HomeActivity extends BaseActivity {
         btnDisasterInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(HomeActivity.this, R.string.disaster_info, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(HomeActivity.this, R.string.disaster_info, Toast.LENGTH_SHORT).show();
+                intent = new Intent(HomeActivity.this,DisasterTypeActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
         btnAskForHelp.setOnClickListener(new View.OnClickListener() {
