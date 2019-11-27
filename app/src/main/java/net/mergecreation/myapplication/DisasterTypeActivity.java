@@ -3,64 +3,73 @@ package net.mergecreation.myapplication;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.media.Image;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.widget.Toast;
 
+import net.mergecreation.myapplication.adapters.DisasterTypeAdapter;
 import net.mergecreation.myapplication.base.BaseActivity;
-import net.mergecreation.myapplication.model.DisasterTypeModel;
 import net.mergecreation.myapplication.network.ApiIClientInstance;
 import net.mergecreation.myapplication.network.IApiService;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
-public class DisasterTypeActivity extends BaseActivity {
-    private RecyclerView recyclerView;
-    private GridLayoutManager gridLayoutManager;
+public class DisasterTypeActivity extends BaseActivity implements DisasterTypeAdapter.OnItemListener {
+    RecyclerView recyclerView;
+    List<Integer> imageList = new ArrayList<>();
+    List<String>nameList = new ArrayList<>();
+    Intent intent;
     IApiService iApiService;
-    List<String>images = new ArrayList<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_disaster_type);
-        recyclerView = findViewById(R.id.disaster_type_rec_view);
-        gridLayoutManager = new GridLayoutManager(this, 2);
-        recyclerView.setLayoutManager(gridLayoutManager);
-
-       // getAllDisasterList();
+        initialize();
 
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        iApiService = ApiIClientInstance.getInstance().create(IApiService.class);
-        Log.e("TAG-->",iApiService.toString());
-        getAllDisasterList();
+        //IApiService iApiService = ApiIClientInstance.getInstance().create(IApiService.class);
     }
 
-    private void getAllDisasterList() {
-        Call<DisasterTypeModel> call = iApiService.getDisasterTypeData();
-        call.enqueue(new Callback<DisasterTypeModel>() {
-            @Override
-            public void onResponse(Call<DisasterTypeModel> call, Response<DisasterTypeModel> response) {
-                if (response!=null) {
-                    DisasterTypeModel disasterTypeModel = response.body();
-                    images.add(disasterTypeModel.getImgUrl());
-                    //Toast.makeText(DisasterTypeActivity.this, disasterTypeModel.getName(), Toast.LENGTH_SHORT).show();
-                }
-            }
+    private void initialize()
+    {
+        recyclerView = findViewById(R.id.disaster_type_rec_view);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,3);
+        recyclerView.setLayoutManager(gridLayoutManager);
+        imageList.add(R.drawable.icon_flood);
+        imageList.add(R.drawable.icon_fire);
+        imageList.add(R.drawable.icon_lightning);
+        imageList.add(R.drawable.icon_earthquake);
+        imageList.add(R.drawable.icon_cyclone);
+        imageList.add(R.drawable.icon_land_slides);
+        imageList.add(R.drawable.icon_accident);
+        imageList.add(R.drawable.icon_building_collapse);
+        imageList.add(R.drawable.icon_surge);
+        nameList.add("বন্যা");
+        nameList.add("অগ্নিকান্ড");
+        nameList.add("বজ্রপাত");
+        nameList.add("ভূমিকম্প");
+        nameList.add("ঘূর্ণিঝড়");
+        nameList.add("ভূমিধ্বস");
+        nameList.add("সড়ক/নৌ দুর্ঘটনা");
+        nameList.add("ভবন ধ্বস");
+        nameList.add("জলোছ্বাস");
+        recyclerView.setAdapter(new DisasterTypeAdapter(imageList,nameList,this));
 
-            @Override
-            public void onFailure(Call<DisasterTypeModel> call, Throwable t) {
-                call.cancel();
-            }
-        });
+
+    }
+
+    @Override
+    public void onItemClick(int position) {
+       //Toast.makeText(this, String.valueOf(position), Toast.LENGTH_SHORT).show();
+
+        switch (position){
+            case 0:
+                intent = new Intent();
+        }
     }
 }
