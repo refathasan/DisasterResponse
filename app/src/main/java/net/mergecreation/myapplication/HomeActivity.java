@@ -1,5 +1,6 @@
 package net.mergecreation.myapplication;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,9 @@ import net.mergecreation.myapplication.home_activity.OthersActivity;
 public class HomeActivity extends BaseActivity {
     private Button btnDisasterInfo, btnAskForHelp, btnImportantPhoneNumber, btnHotLine, btnNews, btnOthers;
     private Intent intent;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,6 +1,7 @@
 package net.mergecreation.myapplication.base;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
@@ -17,6 +18,11 @@ import androidx.core.content.ContextCompat;
 
 public abstract class BaseActivity extends AppCompatActivity {
     private int INTERNET_PERMISSION_CODE=1;
+    Context context;
+    /*public BaseActivity(Context context)
+    {
+        this.context=context;
+    }*/
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);

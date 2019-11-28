@@ -1,5 +1,6 @@
 package net.mergecreation.myapplication;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,9 @@ import net.mergecreation.myapplication.base.BaseActivity;
 public class LoginActivity extends BaseActivity {
     Button loginButton;
     Intent intent=null;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
