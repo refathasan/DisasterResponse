@@ -1,12 +1,12 @@
-package net.mergecreation.myapplication;
+package net.mergecreation.myapplication.home_activity;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
+import net.mergecreation.myapplication.R;
 import net.mergecreation.myapplication.adapters.DisasterTypeAdapter;
 import net.mergecreation.myapplication.base.BaseActivity;
 import net.mergecreation.myapplication.network.ApiIClientInstance;
@@ -18,9 +18,10 @@ import java.util.List;
 public class DisasterTypeActivity extends BaseActivity implements DisasterTypeAdapter.OnItemListener {
     RecyclerView recyclerView;
     List<Integer> imageList = new ArrayList<>();
-    List<String>nameList = new ArrayList<>();
+    List<String> nameList = new ArrayList<>();
     Intent intent;
     IApiService iApiService;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,14 +33,14 @@ public class DisasterTypeActivity extends BaseActivity implements DisasterTypeAd
     @Override
     protected void onStart() {
         super.onStart();
-        //IApiService iApiService = ApiIClientInstance.getInstance().create(IApiService.class);
+
     }
 
-    private void initialize()
-    {
+    private void initialize() {
         recyclerView = findViewById(R.id.disaster_type_rec_view);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,3);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 3);
         recyclerView.setLayoutManager(gridLayoutManager);
+        iApiService = ApiIClientInstance.getInstance().create(IApiService.class);
         imageList.add(R.drawable.icon_flood);
         imageList.add(R.drawable.icon_fire);
         imageList.add(R.drawable.icon_lightning);
@@ -58,18 +59,20 @@ public class DisasterTypeActivity extends BaseActivity implements DisasterTypeAd
         nameList.add("সড়ক/নৌ দুর্ঘটনা");
         nameList.add("ভবন ধ্বস");
         nameList.add("জলোছ্বাস");
-        recyclerView.setAdapter(new DisasterTypeAdapter(imageList,nameList,this));
+        recyclerView.setAdapter(new DisasterTypeAdapter(imageList, nameList, this));
 
 
     }
 
     @Override
     public void onItemClick(int position) {
-       //Toast.makeText(this, String.valueOf(position), Toast.LENGTH_SHORT).show();
 
-        switch (position){
+
+        switch (position) {
             case 0:
                 intent = new Intent();
         }
     }
+
+
 }

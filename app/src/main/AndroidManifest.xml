@@ -16,8 +16,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DisasterTypeActivity"
-            android:screenOrientation="portrait"/>
+        <activity android:name="net.mergecreation.myapplication.home_activity.OthersActivity"></activity>
+        <activity android:name="net.mergecreation.myapplication.home_activity.NewsActivity" />
+        <activity android:name="net.mergecreation.myapplication.home_activity.HotlineActivity" />
+        <activity android:name="net.mergecreation.myapplication.home_activity.ImportantPhoneNumberActivity" />
+        <activity android:name="net.mergecreation.myapplication.home_activity.AskForHelpActivity" />
+        <activity
+            android:name="net.mergecreation.myapplication.home_activity.DisasterTypeActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".HomeActivity"
             android:screenOrientation="portrait" />

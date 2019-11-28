@@ -5,7 +5,7 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DisasterTypeActivity">
+    tools:context="net.mergecreation.myapplication.home_activity.DisasterTypeActivity">
 
    <TextView
        android:id="@+id/disaster_banner"
