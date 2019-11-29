@@ -6,12 +6,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import net.mergecreation.myapplication.R;
 import net.mergecreation.myapplication.adapters.DisasterTypeAdapter;
 import net.mergecreation.myapplication.base.BaseActivity;
 import net.mergecreation.myapplication.network.ApiIClientInstance;
 import net.mergecreation.myapplication.network.IApiService;
+import net.mergecreation.myapplication.utils.IntentStrings;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,7 +75,63 @@ public class DisasterTypeActivity extends BaseActivity implements DisasterTypeAd
 
         switch (position) {
             case 0:
-                intent = new Intent();
+                intent = new Intent(this,SelectLocationActivity.class);
+                intent.putExtra(IntentStrings.FLOOD_EXTRA,IntentStrings.FLOOD_ID);
+                startActivity(intent);
+                finish();
+                break;
+            case 1:
+                intent = new Intent(this,SelectLocationActivity.class);
+                intent.putExtra(IntentStrings.FIRE_EXTRA,IntentStrings.FIRE_ID);
+                startActivity(intent);
+                finish();
+                break;
+            case 2:
+                intent = new Intent(this,SelectLocationActivity.class);
+                intent.putExtra(IntentStrings.LIGHTNING_EXTRA,IntentStrings.LIGHTNING_ID);
+                startActivity(intent);
+                finish();
+                break;
+            case 3:
+                intent = new Intent(this,SelectLocationActivity.class);
+                intent.putExtra(IntentStrings.EARTHQUAKE_EXTRA,IntentStrings.EARTHQUAKE_ID);
+                startActivity(intent);
+                finish();
+                break;
+            case 4:
+                intent = new Intent(this,SelectLocationActivity.class);
+                intent.putExtra(IntentStrings.CYCLONE_EXTRA,IntentStrings.CYCLONE_ID);
+                startActivity(intent);
+                finish();
+                break;
+            case 5:
+                intent = new Intent(this,SelectLocationActivity.class);
+                intent.putExtra(IntentStrings.LAND_SLIDES_EXTRA,IntentStrings.LAND_SLIDES_ID);
+                startActivity(intent);
+                finish();
+                break;
+            case 6:
+                intent = new Intent(this,SelectLocationActivity.class);
+                intent.putExtra(IntentStrings.ACCIDENT_EXTRA,IntentStrings.ACCIDENT_ID);
+                startActivity(intent);
+                finish();
+                break;
+            case 7:
+                intent = new Intent(this,SelectLocationActivity.class);
+                intent.putExtra(IntentStrings.BUILDING_COLLAPSE_EXTRA,IntentStrings.BUILDING_COLLAPSE_ID);
+                startActivity(intent);
+                finish();
+                break;
+            case 8:
+                intent = new Intent(this,SelectLocationActivity.class);
+                intent.putExtra(IntentStrings.SURGE_EXTRA,IntentStrings.SURGE_ID);
+                startActivity(intent);
+                finish();
+                break;
+            default:
+                Toast.makeText(this, "Wrong Selection", Toast.LENGTH_SHORT).show();
+                break;
+
         }
     }
 

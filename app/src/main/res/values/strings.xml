@@ -8,4 +8,14 @@
     <string name="hotline">হটলাইন</string>
     <string name="news">খবর</string>
     <string name="others">অন্যান্য</string>
+    <string name="imergencey_contact_text">জরুরি সেবা নিতে কল করুন দিন রাত ২৪ ঘন্টা</string>
+    <string name="text_flood">বন্যা</string>
+    <string name="text_fire">অগ্নিকান্ড</string>
+    <string name="text_lightning">বজ্রপাত</string>
+    <string name="text_earth">ভুমিকম্প</string>
+    <string name="text_cyclone">ঘূর্ণিঝড়</string>
+    <string name="text_land">ভূমিধস</string>
+    <string name="text_accident">দুর্ঘটনা</string>
+    <string name="text_bcollapse">ভবন ধস</string>
+    <string name="text_surge">জলোচ্ছ্বাস</string>
 </resources>

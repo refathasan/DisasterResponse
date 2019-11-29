@@ -5,10 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="net.mergecreation.myapplication.home_activity.HotlineActivity">
-    <view class="androidx.appcompat.app.AlertController$RecycleListView"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/hotline_rec_view">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/hotline_number"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textSize="70dp"
+        android:text="999"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hotline_number"
+        android:text="@string/imergencey_contact_text"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/punarbhaba"/>
 
-    </view>
 </RelativeLayout>
