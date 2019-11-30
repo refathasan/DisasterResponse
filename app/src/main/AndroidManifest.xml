@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".home_activity.SelectLocationActivity"></activity>
+        <activity android:name=".home_activity.PostDisasterDetailsActivity"></activity>
+        <activity android:name=".home_activity.SelectLocationActivity" />
         <activity android:name=".home_activity.OthersActivity" />
         <activity android:name=".home_activity.NewsActivity" />
         <activity android:name=".home_activity.HotlineActivity" />

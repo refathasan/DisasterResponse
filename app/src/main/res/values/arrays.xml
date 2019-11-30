@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="union">
+        <item>বটিয়াঘাটা </item>
+        <item>আমিরপুর</item>
+        <item>গঙ্গারামপুর</item>
+        <item>সুরখালী</item>
+        <item>ভান্ডারকো</item>
+        <item>বালিয়াডাঙ্গা</item>
+        <item>জলমা</item>
+    </string-array>
+    <string-array name="word">
+        <item>এক</item>
+        <item>দুই</item>
+        <item>তিন</item>
+        <item>চার</item>
+        <item>পাঁচ</item>
+        <item>ছয়</item>
+        <item>সাত</item>
+        <item>আট</item>
+        <item>নয়</item>
+    </string-array>
+</resources>

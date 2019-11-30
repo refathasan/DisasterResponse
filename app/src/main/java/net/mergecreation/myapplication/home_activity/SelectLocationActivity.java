@@ -2,8 +2,12 @@ package net.mergecreation.myapplication.home_activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import net.mergecreation.myapplication.R;
 import net.mergecreation.myapplication.base.BaseActivity;
@@ -13,6 +17,8 @@ public class SelectLocationActivity extends BaseActivity {
     TextView tvDisasterType,tvDivisionType,tvDistrictType,tvUpozilaType;
     Spinner spUnionType, spWordType;
     Intent intent;
+    Bundle exteras;
+    Button btnBack,btnForoward;
     int disasterTypeValue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,56 +30,66 @@ public class SelectLocationActivity extends BaseActivity {
         tvUpozilaType=findViewById(R.id.tv_up_type);
         spUnionType=findViewById(R.id.sp_uni_type);
         spWordType=findViewById(R.id.sp_wor_type);
+        btnBack =findViewById(R.id.btnCancel);
+        btnForoward=findViewById(R.id.btnSubmit);
+        tvDivisionType.setText("খুলনা");
+        tvDistrictType.setText("খুলনা");
+        tvUpozilaType.setText("বটিয়াঘাটা");
         intent= getIntent();
-
-
-
+        setFlag();
+        unionSetup();
+        wordSetup();
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        btnForoward.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SelectLocationActivity.this,PostDisasterDetailsActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
-
-
-
-    private void getDisaster(int type)
+    private void setFlag()
     {
-        switch (disasterTypeValue)
+        exteras = intent.getExtras();
+        if(exteras!=null)
         {
-            case 0:
+            if(exteras.getInt(IntentStrings.FLOOD_EXTRA)==IntentStrings.FLOOD_ID){
                 tvDisasterType.setText(getResources().getText(R.string.text_flood));
-                break;
-            case 1:
+            }else if(exteras.getInt(IntentStrings.FIRE_EXTRA)==IntentStrings.FIRE_ID){
                 tvDisasterType.setText(getResources().getText(R.string.text_fire));
-                break;
-            case 2:
+            }else if(exteras.getInt(IntentStrings.LIGHTNING_EXTRA)==IntentStrings.LIGHTNING_ID){
                 tvDisasterType.setText(getResources().getText(R.string.text_lightning));
-                break;
-            case 3:
+            }else if(exteras.getInt(IntentStrings.EARTHQUAKE_EXTRA)==IntentStrings.EARTHQUAKE_ID){
                 tvDisasterType.setText(getResources().getText(R.string.text_earth));
-                break;
-            case 4:
+            }else if(exteras.getInt(IntentStrings.CYCLONE_EXTRA)==IntentStrings.CYCLONE_ID){
                 tvDisasterType.setText(getResources().getText(R.string.text_cyclone));
-                break;
-            case 5:
+            }else if(exteras.getInt(IntentStrings.LAND_SLIDES_EXTRA)==IntentStrings.LAND_SLIDES_ID){
                 tvDisasterType.setText(getResources().getText(R.string.text_land));
-                break;
-            case 6:
+            }else if(exteras.getInt(IntentStrings.ACCIDENT_EXTRA)==IntentStrings.ACCIDENT_ID){
                 tvDisasterType.setText(getResources().getText(R.string.text_accident));
-                break;
-            case 7:
+            }else if(exteras.getInt(IntentStrings.BUILDING_COLLAPSE_EXTRA)==IntentStrings.BUILDING_COLLAPSE_ID){
                 tvDisasterType.setText(getResources().getText(R.string.text_bcollapse));
-                break;
-            case 8:
+            }else if(exteras.getInt(IntentStrings.SURGE_EXTRA)==IntentStrings.SURGE_ID){
                 tvDisasterType.setText(getResources().getText(R.string.text_surge));
-                break;
+            }
+        }else
+        {
+            Toast.makeText(this, "Extras Null", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private int getIntentData( String value)
-    {
-        disasterTypeValue =intent.getIntExtra(value);
-        switch (disasterTypeValue){
-            case 0 :
-
-
-        }
+    private void unionSetup(){
+        ArrayAdapter<String>unionSpinertAdapter= new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,getResources().getStringArray(R.array.union));
+        spUnionType.setAdapter(unionSpinertAdapter);
     }
-
+    private void wordSetup(){
+        ArrayAdapter<String>wordSpinertAdapter= new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,getResources().getStringArray(R.array.word));
+        spWordType.setAdapter(wordSpinertAdapter);
+    }
 }
