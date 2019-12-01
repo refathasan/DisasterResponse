@@ -3,6 +3,7 @@ package net.mergecreation.myapplication.home_activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -19,6 +20,8 @@ public class SelectLocationActivity extends BaseActivity {
     Intent intent;
     Bundle exteras;
     Button btnBack,btnForoward;
+    int unionId;
+    int wordId;
     int disasterTypeValue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,9 +90,97 @@ public class SelectLocationActivity extends BaseActivity {
     private void unionSetup(){
         ArrayAdapter<String>unionSpinertAdapter= new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,getResources().getStringArray(R.array.union));
         spUnionType.setAdapter(unionSpinertAdapter);
+        spUnionType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position){
+                    case 0:
+
+                        //Toast.makeText(SelectLocationActivity.this, String.valueOf(unionId), Toast.LENGTH_SHORT).show();
+                        break;
+                    case 1:
+                        unionId =2;
+                        Toast.makeText(SelectLocationActivity.this, String.valueOf(unionId), Toast.LENGTH_SHORT).show();
+                        break;
+                    case 2:
+                        unionId =3;
+                        Toast.makeText(SelectLocationActivity.this, String.valueOf(unionId), Toast.LENGTH_SHORT).show();
+                        break;
+                    case 3:
+                        unionId =4;
+                        Toast.makeText(SelectLocationActivity.this, String.valueOf(unionId), Toast.LENGTH_SHORT).show();
+                        break;
+                    case 4:
+                        unionId =5;
+                        Toast.makeText(SelectLocationActivity.this, String.valueOf(unionId), Toast.LENGTH_SHORT).show();
+                        break;
+                    case 5:
+                        unionId =6;
+                        Toast.makeText(SelectLocationActivity.this, String.valueOf(unionId), Toast.LENGTH_SHORT).show();
+                        break;
+                    case 6:
+                        unionId =7;
+                        Toast.makeText(SelectLocationActivity.this, String.valueOf(unionId), Toast.LENGTH_SHORT).show();
+                        break;
+                    case 7:
+                        unionId =8;
+                        Toast.makeText(SelectLocationActivity.this, String.valueOf(unionId), Toast.LENGTH_SHORT).show();
+                        break;
+                   /* default:
+                        unionId =2;
+                        Toast.makeText(SelectLocationActivity.this, String.valueOf(unionId), Toast.LENGTH_SHORT).show();
+                        break;*/
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                //unionId =2;
+            }
+        });
     }
     private void wordSetup(){
         ArrayAdapter<String>wordSpinertAdapter= new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,getResources().getStringArray(R.array.word));
         spWordType.setAdapter(wordSpinertAdapter);
+        spWordType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position){
+                    case 0:
+                        break;
+                    case 1:
+                        wordId=1;
+                        break;
+                    case 2:
+                        wordId=2;
+                        break;
+                    case 3:
+                        wordId=3;
+                        break;
+                    case 4:
+                        wordId=4;
+                        break;
+                    case 5:
+                        wordId=5;
+                        break;
+                    case 6:
+                        wordId=6;
+                        break;
+                    case 7:
+                        wordId=7;
+                        break;
+                    case 8:
+                        wordId=8;
+                        break;
+                    case 9:
+                        wordId=9;
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
     }
 }

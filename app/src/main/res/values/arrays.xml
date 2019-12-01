@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="union">
+        <item>ঈউনিয়ন সিলেক্ট করুন</item>
         <item>বটিয়াঘাটা </item>
         <item>আমিরপুর</item>
         <item>গঙ্গারামপুর</item>
@@ -10,6 +11,7 @@
         <item>জলমা</item>
     </string-array>
     <string-array name="word">
+        <item>ওয়ার্ড সিলেক্ট করুন</item>
         <item>এক</item>
         <item>দুই</item>
         <item>তিন</item>
