@@ -7,7 +7,7 @@
     android:layout_marginTop="20dp"
     tools:context=".home_activity.PostDisasterDetailsActivity">
 
-    <TextView
+    <EditText
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="238dp"
@@ -27,6 +27,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/btnSubmitData"
         android:layout_below="@id/addImage"
         android:text="জমা করুন"/>
 </RelativeLayout>
