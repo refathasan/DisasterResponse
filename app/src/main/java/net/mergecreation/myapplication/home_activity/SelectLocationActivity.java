@@ -22,7 +22,7 @@ public class SelectLocationActivity extends BaseActivity {
     Button btnBack,btnForoward;
     int unionId;
     int wordId;
-    int disasterTypeValue;
+    int disasterTypeId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +52,12 @@ public class SelectLocationActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SelectLocationActivity.this,PostDisasterDetailsActivity.class);
+                intent.putExtra(IntentStrings.DISASTER_EXTRA,disasterTypeId);
+                intent.putExtra(IntentStrings.DIVISION_EXTRA,2);
+                intent.putExtra(IntentStrings.DISTRICT_EXTRA,2);
+                intent.putExtra(IntentStrings.UPOZILA_EXTRA,2);
+                intent.putExtra(IntentStrings.UNION_EXTRA,unionId);
+                intent.putExtra(IntentStrings.WORD_EXTRA,wordId);
                 startActivity(intent);
                 finish();
             }
@@ -64,22 +70,31 @@ public class SelectLocationActivity extends BaseActivity {
         {
             if(exteras.getInt(IntentStrings.FLOOD_EXTRA)==IntentStrings.FLOOD_ID){
                 tvDisasterType.setText(getResources().getText(R.string.text_flood));
+                disasterTypeId =IntentStrings.FLOOD_ID;
             }else if(exteras.getInt(IntentStrings.FIRE_EXTRA)==IntentStrings.FIRE_ID){
                 tvDisasterType.setText(getResources().getText(R.string.text_fire));
+                disasterTypeId =IntentStrings.FIRE_ID;
             }else if(exteras.getInt(IntentStrings.LIGHTNING_EXTRA)==IntentStrings.LIGHTNING_ID){
                 tvDisasterType.setText(getResources().getText(R.string.text_lightning));
+                disasterTypeId =IntentStrings.LIGHTNING_ID;
             }else if(exteras.getInt(IntentStrings.EARTHQUAKE_EXTRA)==IntentStrings.EARTHQUAKE_ID){
                 tvDisasterType.setText(getResources().getText(R.string.text_earth));
+                disasterTypeId =IntentStrings.EARTHQUAKE_ID;
             }else if(exteras.getInt(IntentStrings.CYCLONE_EXTRA)==IntentStrings.CYCLONE_ID){
                 tvDisasterType.setText(getResources().getText(R.string.text_cyclone));
+                disasterTypeId =IntentStrings.CYCLONE_ID;
             }else if(exteras.getInt(IntentStrings.LAND_SLIDES_EXTRA)==IntentStrings.LAND_SLIDES_ID){
                 tvDisasterType.setText(getResources().getText(R.string.text_land));
+                disasterTypeId =IntentStrings.LAND_SLIDES_ID;
             }else if(exteras.getInt(IntentStrings.ACCIDENT_EXTRA)==IntentStrings.ACCIDENT_ID){
                 tvDisasterType.setText(getResources().getText(R.string.text_accident));
+                disasterTypeId =IntentStrings.ACCIDENT_ID;
             }else if(exteras.getInt(IntentStrings.BUILDING_COLLAPSE_EXTRA)==IntentStrings.BUILDING_COLLAPSE_ID){
                 tvDisasterType.setText(getResources().getText(R.string.text_bcollapse));
+                disasterTypeId =IntentStrings.BUILDING_COLLAPSE_ID;
             }else if(exteras.getInt(IntentStrings.SURGE_EXTRA)==IntentStrings.SURGE_ID){
                 tvDisasterType.setText(getResources().getText(R.string.text_surge));
+                disasterTypeId =IntentStrings.SURGE_ID;
             }
         }else
         {
@@ -88,7 +103,8 @@ public class SelectLocationActivity extends BaseActivity {
     }
 
     private void unionSetup(){
-        ArrayAdapter<String>unionSpinertAdapter= new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,getResources().getStringArray(R.array.union));
+        ArrayAdapter<String>unionSpinertAdapter= new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,getResources().getStringArray(R.array.union));
+        unionSpinertAdapter.setDropDownViewResource(android.R.layout.simple_list_item_single_choice);
         spUnionType.setAdapter(unionSpinertAdapter);
         spUnionType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -140,7 +156,8 @@ public class SelectLocationActivity extends BaseActivity {
         });
     }
     private void wordSetup(){
-        ArrayAdapter<String>wordSpinertAdapter= new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,getResources().getStringArray(R.array.word));
+        ArrayAdapter<String>wordSpinertAdapter= new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,getResources().getStringArray(R.array.word));
+        wordSpinertAdapter.setDropDownViewResource(android.R.layout.simple_list_item_single_choice);
         spWordType.setAdapter(wordSpinertAdapter);
         spWordType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -180,6 +197,7 @@ public class SelectLocationActivity extends BaseActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
     }

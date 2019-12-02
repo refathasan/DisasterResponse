@@ -21,4 +21,11 @@ public class IntentStrings {
     public static String BUILDING_COLLAPSE_EXTRA ="BUILDING_COLLAPSE_ID";
     public static String SURGE_EXTRA ="SURGE_ID";
 
+    public static String DISASTER_EXTRA ="DISASTER_ID";
+    public static String DIVISION_EXTRA ="DIVISION_ID";
+    public static String DISTRICT_EXTRA ="DISTRICT_ID";
+    public static String UPOZILA_EXTRA ="UPOZILA_ID";
+    public static String UNION_EXTRA ="UNION_ID";
+    public static String WORD_EXTRA ="WORD_ID";
+
 }
