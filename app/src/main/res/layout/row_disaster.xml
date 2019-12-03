@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/button_bg_transparent">
+        android:layout_margin="5dp">
         <ImageView
             android:id="@+id/im_disaster_image"
             android:layout_marginTop="10dp"

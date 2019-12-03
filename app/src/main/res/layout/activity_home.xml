@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_centerHorizontal="true"
-    android:background="#90ee90"
+    android:background="@drawable/signin_background"
     tools:context=".HomeActivity">
 
     <LinearLayout
@@ -21,8 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:orientation="horizontal"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
+            android:padding="20dp"
             android:weightSum="1">
 
             <Button
@@ -33,6 +32,8 @@
                 android:background="@drawable/button_bg_transparent"
                 android:drawableTop="@drawable/icon_1"
                 android:text="@string/disaster_info"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
                 android:textAlignment="center"
                 android:fontFamily="@font/punarbhaba"/>
 
@@ -41,6 +42,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
                 android:background="@drawable/button_bg_transparent"
                 android:drawableTop="@drawable/icon_2"
                 android:text="@string/ask_for_help"
@@ -62,6 +65,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
                 android:background="@drawable/button_bg_transparent"
                 android:drawableTop="@drawable/icon_3"
                 android:text="@string/important_phn_number"
@@ -73,6 +78,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
                 android:background="@drawable/button_bg_transparent"
                 android:drawableTop="@drawable/icon_4"
                 android:text="@string/hotline"
@@ -94,6 +101,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
                 android:background="@drawable/button_bg_transparent"
                 android:drawableTop="@drawable/icon_5"
                 android:text="@string/news"
@@ -105,6 +114,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
                 android:background="@drawable/button_bg_transparent"
                 android:drawableTop="@drawable/icon_6"
                 android:text="@string/others"
@@ -113,4 +124,4 @@
         </LinearLayout>
 
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

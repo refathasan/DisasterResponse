@@ -1,5 +1,7 @@
 package net.mergecreation.myapplication.home_activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +25,7 @@ public class SelectLocationActivity extends BaseActivity {
     int unionId;
     int wordId;
     int disasterTypeId;
+    AlertDialog.Builder dialogBuilder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +38,7 @@ public class SelectLocationActivity extends BaseActivity {
         spWordType=findViewById(R.id.sp_wor_type);
         btnBack =findViewById(R.id.btnCancel);
         btnForoward=findViewById(R.id.btnSubmit);
+        dialogBuilder = new AlertDialog.Builder(SelectLocationActivity.this);
         tvDivisionType.setText("খুলনা");
         tvDistrictType.setText("খুলনা");
         tvUpozilaType.setText("বটিয়াঘাটা");
@@ -51,6 +55,29 @@ public class SelectLocationActivity extends BaseActivity {
         btnForoward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if(unionId<=0|| wordId<=0)
+                {
+
+                    dialogBuilder.setMessage("ওয়ার্ড বা ইউনিয়ন সিলেক্ট করা হয় নি, সিলেক্ট করুন");
+                    dialogBuilder.setCancelable(true);
+                    dialogBuilder.setPositiveButton("ওয়ার্ড ও ইউনিয়ন সিলেক্ট করুন", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+                    dialogBuilder.setNegativeButton("বাতিল করুন", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+                    AlertDialog alertDialog = dialogBuilder.create();
+                    alertDialog.show();
+
+                }else
+                {
                 Intent intent = new Intent(SelectLocationActivity.this,PostDisasterDetailsActivity.class);
                 intent.putExtra(IntentStrings.DISASTER_EXTRA,disasterTypeId);
                 intent.putExtra(IntentStrings.DIVISION_EXTRA,2);
@@ -60,6 +87,7 @@ public class SelectLocationActivity extends BaseActivity {
                 intent.putExtra(IntentStrings.WORD_EXTRA,wordId);
                 startActivity(intent);
                 finish();
+                }
             }
         });
     }
@@ -151,7 +179,7 @@ public class SelectLocationActivity extends BaseActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                //unionId =2;
+                unionId =-1;
             }
         });
     }
@@ -197,7 +225,7 @@ public class SelectLocationActivity extends BaseActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                wordId=-1;
             }
         });
     }
