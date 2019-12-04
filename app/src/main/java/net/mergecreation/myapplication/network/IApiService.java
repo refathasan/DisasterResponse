@@ -2,6 +2,7 @@ package net.mergecreation.myapplication.network;
 
 import net.mergecreation.myapplication.model.DisasterInformationResponse;
 import net.mergecreation.myapplication.model.DisasterTypeModel;
+import net.mergecreation.myapplication.model.DivisionModel;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -25,4 +26,7 @@ public interface IApiService {
                                                    @Field("union_id") int union_id,
                                                    @Field("word_id") int word_id,
                                                    @Field("created_by") int created_by);
+
+    @GET("DisasterApi/getDivision")
+    Call<DivisionModel> divisionData();
 }

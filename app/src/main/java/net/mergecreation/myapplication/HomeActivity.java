@@ -25,6 +25,7 @@ public class HomeActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        activateToolbar("দূর্যোগ সেবা");
         btnDisasterInfo = findViewById(R.id.btn_disaster_info);
         btnAskForHelp = findViewById(R.id.btn_disaster_ask_help);
         btnImportantPhoneNumber = findViewById(R.id.btn_important_phn);

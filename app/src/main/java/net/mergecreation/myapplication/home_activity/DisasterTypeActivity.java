@@ -23,7 +23,7 @@ public class DisasterTypeActivity extends BaseActivity implements DisasterTypeAd
     List<Integer> imageList = new ArrayList<>();
     List<String> nameList = new ArrayList<>();
     Intent intent;
-    IApiService iApiService;
+    //IApiService iApiService;
 
 
 
@@ -38,6 +38,7 @@ public class DisasterTypeActivity extends BaseActivity implements DisasterTypeAd
     @Override
     protected void onStart() {
         super.onStart();
+        activateToolbar("দুর্যোগের ধরণ");
 
     }
 
@@ -45,7 +46,7 @@ public class DisasterTypeActivity extends BaseActivity implements DisasterTypeAd
         recyclerView = findViewById(R.id.disaster_type_rec_view);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 3);
         recyclerView.setLayoutManager(gridLayoutManager);
-        iApiService = ApiIClientInstance.getInstance().create(IApiService.class);
+        //iApiService = ApiIClientInstance.getInstance().create(IApiService.class);
         imageList.add(R.drawable.icon_flood);
         imageList.add(R.drawable.icon_fire);
         imageList.add(R.drawable.icon_lightning);

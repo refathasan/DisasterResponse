@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="union">
-        <item>ঈউনিয়ন সিলেক্ট করুন</item>
+        <item>ইউনিয়ন সিলেক্ট করুন</item>
         <item>বটিয়াঘাটা </item>
         <item>আমিরপুর</item>
         <item>গঙ্গারামপুর</item>
@@ -21,5 +21,17 @@
         <item>সাত</item>
         <item>আট</item>
         <item>নয়</item>
+    </string-array>
+    <string-array name="division">
+        <item>বিভাগ নির্বাচন করুন</item>
+        <item>খুলনা বিভাগ</item>
+    </string-array>
+    <string-array name="district">
+        <item>জেলা নির্বাচন করুন</item>
+        <item>খুলনা</item>
+    </string-array>
+    <string-array name="upozila">
+        <item>উপজেলা নির্বাচন করুন</item>
+        <item>বটিয়াঘাটা</item>
     </string-array>
 </resources>

@@ -7,66 +7,45 @@ import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
-public abstract class BaseActivity extends AppCompatActivity {
-    private int INTERNET_PERMISSION_CODE=1;
-    Context context;
-    /*public BaseActivity(Context context)
+import net.mergecreation.myapplication.R;
+
+public class BaseActivity extends AppCompatActivity {
+    private Toolbar toolbar;
+
+    public Toolbar activateToolbar(CharSequence title)
     {
-        this.context=context;
-    }*/
-    @Override
+        if(toolbar==null)
+        {
+            toolbar =(Toolbar)findViewById(R.id.app_bar);
+            if(toolbar!=null)
+            {
+                setSupportActionBar(toolbar);
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+               // getSupportActionBar().setDisplayShowHomeEnabled(true);
+                getSupportActionBar().setTitle(title);
+                getSupportActionBar().setDisplayShowTitleEnabled(true);
+                getSupportActionBar().getElevation();
+               // getSupportActionBar().
+            }
+        }
+        return toolbar;
+    }
+   /* @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
-        if(ContextCompat.checkSelfPermission(BaseActivity.this, Manifest.permission.INTERNET)== PackageManager.PERMISSION_GRANTED){
-            Toast.makeText(this, "Permission Already granted", Toast.LENGTH_SHORT).show();
-        }else{
-            requestInternetPermission();
-        }
+    }*/
 
-    }
-
-    private void requestInternetPermission() {
-        if(ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.INTERNET)){
-            new AlertDialog.Builder(this)
-                    .setTitle("Permission Needed")
-                    .setMessage("To Access the content permission needed")
-                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            ActivityCompat.requestPermissions(BaseActivity.this,new String[]{Manifest.permission.INTERNET},INTERNET_PERMISSION_CODE);
-                        }
-                    })
-                    .setNegativeButton("", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    })
-                    .create()
-                    .show();
-        }else{
-            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.INTERNET},INTERNET_PERMISSION_CODE);
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if(requestCode==INTERNET_PERMISSION_CODE){
-            if(grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
-                Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show();
-            }else {
-                Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
-            }
-
-        }
-    }
 }
