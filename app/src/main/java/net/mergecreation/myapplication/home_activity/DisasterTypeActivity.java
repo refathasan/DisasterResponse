@@ -11,6 +11,7 @@ import android.widget.Toast;
 import net.mergecreation.myapplication.R;
 import net.mergecreation.myapplication.adapters.DisasterTypeAdapter;
 import net.mergecreation.myapplication.base.BaseActivity;
+import net.mergecreation.myapplication.base.OnItemListener;
 import net.mergecreation.myapplication.network.ApiIClientInstance;
 import net.mergecreation.myapplication.network.IApiService;
 import net.mergecreation.myapplication.utils.IntentStrings;
@@ -18,7 +19,7 @@ import net.mergecreation.myapplication.utils.IntentStrings;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DisasterTypeActivity extends BaseActivity implements DisasterTypeAdapter.OnItemListener {
+public class DisasterTypeActivity extends BaseActivity implements OnItemListener {
     RecyclerView recyclerView;
     List<Integer> imageList = new ArrayList<>();
     List<String> nameList = new ArrayList<>();

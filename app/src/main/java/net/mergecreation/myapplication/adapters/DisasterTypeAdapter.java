@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 
 import net.mergecreation.myapplication.R;
+import net.mergecreation.myapplication.base.OnItemListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,7 +65,5 @@ public class DisasterTypeAdapter extends RecyclerView.Adapter<DisasterTypeAdapte
         }
     }
 
-    public interface OnItemListener {
-        void onItemClick(int position);
-    }
+
 }

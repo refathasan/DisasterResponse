@@ -3,6 +3,9 @@ package net.mergecreation.myapplication.network;
 import net.mergecreation.myapplication.model.DisasterInformationResponse;
 import net.mergecreation.myapplication.model.DisasterTypeModel;
 import net.mergecreation.myapplication.model.DivisionModel;
+import net.mergecreation.myapplication.model.HelpLineModel;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -29,4 +32,7 @@ public interface IApiService {
 
     @GET("DisasterApi/getDivision")
     Call<DivisionModel> divisionData();
+
+    @GET("DisasterApi/getAllHelplineNumber")
+    Call<List<HelpLineModel>>getAllHelpLineNumber();
 }
