@@ -16,19 +16,26 @@
         android:roundIcon="@mipmap/app_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".home_activity.PostDisasterDetailsActivity"></activity>
-        <activity android:name=".home_activity.SelectLocationActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".home_activity.OthersActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".home_activity.NewsActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".home_activity.HotlineActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".home_activity.ImportantPhoneNumberActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".home_activity.AskForHelpActivity"
-            android:screenOrientation="portrait"/>
+        <activity android:name=".home_activity.HelpLineTypeActivity"></activity>
+        <activity android:name=".home_activity.PostDisasterDetailsActivity" />
+        <activity
+            android:name=".home_activity.SelectLocationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home_activity.OthersActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home_activity.NewsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home_activity.HotlineActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home_activity.ImportantPhoneNumberActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home_activity.AskForHelpActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".home_activity.DisasterTypeActivity"
             android:screenOrientation="portrait" />

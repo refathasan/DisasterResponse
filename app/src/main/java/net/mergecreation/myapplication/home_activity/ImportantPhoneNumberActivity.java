@@ -53,7 +53,7 @@ public class ImportantPhoneNumberActivity extends BaseActivity implements OnItem
         progressDoalog = new ProgressDialog(ImportantPhoneNumberActivity.this);
         progressDoalog.setMax(100);
         progressDoalog.setMessage("অনুগ্রহপূর্বক অপেক্ষা করুন...");
-        progressDoalog.setTitle("আপনার তথ্য জমা হচ্ছে");
+        progressDoalog.setTitle("আপনার তথ্য প্রদর্শনীর জন্য তৈরী হচ্ছে");
         progressDoalog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         // show it
         progressDoalog.show();

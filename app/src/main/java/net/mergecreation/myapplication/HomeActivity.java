@@ -1,6 +1,5 @@
 package net.mergecreation.myapplication;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,8 +9,8 @@ import net.mergecreation.myapplication.base.BaseActivity;
 
 import net.mergecreation.myapplication.home_activity.AskForHelpActivity;
 import net.mergecreation.myapplication.home_activity.DisasterTypeActivity;
+import net.mergecreation.myapplication.home_activity.HelpLineTypeActivity;
 import net.mergecreation.myapplication.home_activity.HotlineActivity;
-import net.mergecreation.myapplication.home_activity.ImportantPhoneNumberActivity;
 import net.mergecreation.myapplication.home_activity.NewsActivity;
 import net.mergecreation.myapplication.home_activity.OthersActivity;
 
@@ -51,7 +50,7 @@ public class HomeActivity extends BaseActivity {
         btnImportantPhoneNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(HomeActivity.this, ImportantPhoneNumberActivity.class);
+                intent = new Intent(HomeActivity.this, HelpLineTypeActivity.class);
                 startActivity(intent);
             }
         });

@@ -3,6 +3,7 @@ package net.mergecreation.myapplication.network;
 import net.mergecreation.myapplication.model.DisasterInformationResponse;
 import net.mergecreation.myapplication.model.DisasterTypeModel;
 import net.mergecreation.myapplication.model.DivisionModel;
+import net.mergecreation.myapplication.model.HelpLineCategoryTypeModel;
 import net.mergecreation.myapplication.model.HelpLineModel;
 
 import java.util.List;
@@ -35,4 +36,6 @@ public interface IApiService {
 
     @GET("DisasterApi/getAllHelplineNumber")
     Call<List<HelpLineModel>>getAllHelpLineNumber();
+    @GET("DisasterApi/getAllHelplineCategoryType")
+    Call<List<HelpLineCategoryTypeModel>>getHelpLineCategory();
 }
