@@ -3,27 +3,30 @@
     android:layout_width="match_parent"
     android:layout_height="80dp"
     android:weightSum="1"
+    android:background="#ffffff"
     android:layout_marginTop="10dp"
     android:layout_marginBottom="10dp"
     android:layout_marginStart="5dp"
     android:layout_marginEnd="5dp"
     android:padding="5dp"
     android:orientation="horizontal">
+
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/imageView"
-        android:src="@mipmap/ic_launcher"
-        android:padding="5dp"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:layout_weight=".5"/>
+        android:layout_weight=".5"
+        android:padding="5dp"
+        android:src="@mipmap/ic_launcher" />
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight=".5"
         android:text="Hello"
         android:id="@+id/tvCategory"
         android:layout_margin="5dp"
         android:padding="5dp"
-        android:textSize="50sp"/>
+        android:fontFamily="@font/sutonnyomj"
+        android:textSize="25sp"/>
 </LinearLayout>

@@ -5,6 +5,7 @@ import net.mergecreation.myapplication.model.DisasterTypeModel;
 import net.mergecreation.myapplication.model.DivisionModel;
 import net.mergecreation.myapplication.model.HelpLineCategoryTypeModel;
 import net.mergecreation.myapplication.model.HelpLineModel;
+import net.mergecreation.myapplication.model.NewsModel;
 
 import java.util.List;
 
@@ -38,4 +39,6 @@ public interface IApiService {
     Call<List<HelpLineModel>>getAllHelpLineNumber();
     @GET("DisasterApi/getAllHelplineCategoryType")
     Call<List<HelpLineCategoryTypeModel>>getHelpLineCategory();
+    @GET("DisasterApi/getAllNews")
+    Call<List<NewsModel>>getNewsData();
 }

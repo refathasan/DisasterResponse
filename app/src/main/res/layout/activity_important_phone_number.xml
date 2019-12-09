@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FEBF1C"
     tools:context="net.mergecreation.myapplication.home_activity.ImportantPhoneNumberActivity">
     <include android:id="@+id/app_bar" layout="@layout/toolbar"/>
     <androidx.recyclerview.widget.RecyclerView

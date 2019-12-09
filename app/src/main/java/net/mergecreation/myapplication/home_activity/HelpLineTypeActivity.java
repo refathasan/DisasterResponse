@@ -5,10 +5,13 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
 import net.mergecreation.myapplication.R;
+import net.mergecreation.myapplication.adapters.HelpLineTypeAdapter;
 import net.mergecreation.myapplication.base.BaseActivity;
+import net.mergecreation.myapplication.base.OnItemListener;
 import net.mergecreation.myapplication.model.HelpLineCategoryTypeModel;
 import net.mergecreation.myapplication.network.ApiIClientInstance;
 import net.mergecreation.myapplication.network.IApiService;
@@ -19,10 +22,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class HelpLineTypeActivity extends BaseActivity {
+public class HelpLineTypeActivity extends BaseActivity implements OnItemListener {
     RecyclerView recyclerView;
     ProgressDialog progressDoalog;
     IApiService iApiService;
+    HelpLineTypeAdapter helpLineTypeAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,14 +59,24 @@ public class HelpLineTypeActivity extends BaseActivity {
             public void onResponse(Call<List<HelpLineCategoryTypeModel>> call, Response<List<HelpLineCategoryTypeModel>> response) {
                 if(response.isSuccessful())
                 {
-
+                    helpLineTypeAdapter = new HelpLineTypeAdapter(HelpLineTypeActivity.this,response.body());
                 }
+                recyclerView.setAdapter(helpLineTypeAdapter);
+                progressDoalog.dismiss();
             }
 
             @Override
             public void onFailure(Call<List<HelpLineCategoryTypeModel>> call, Throwable t) {
-
+                call.cancel();
+                progressDoalog.dismiss();
             }
         });
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(this,ImportantPhoneNumberActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
