@@ -1,6 +1,8 @@
 package net.mergecreation.myapplication.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +39,7 @@ public class ImmergencyPhoneTypeAdapter extends RecyclerView.Adapter<ImmergencyP
     @Override
     public ImmergencyPhoneViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
        View view = LayoutInflater.from(context).inflate(R.layout.row_important_phone,parent,false);
-       return new ImmergencyPhoneViewHolder(view,onItemListener);
+       return new ImmergencyPhoneViewHolder(view);
     }
 
     @Override
@@ -53,22 +55,25 @@ public class ImmergencyPhoneTypeAdapter extends RecyclerView.Adapter<ImmergencyP
         return helpLineList.size();
     }
 
-    public class ImmergencyPhoneViewHolder extends RecyclerView.ViewHolder implements OnItemListener {
+    public class ImmergencyPhoneViewHolder extends RecyclerView.ViewHolder{
         public OnItemListener onItemListener;
         public TextView nameView;
         public TextView numberView;
 
-        public ImmergencyPhoneViewHolder(@NonNull View itemView, OnItemListener onItemListener) {
+        public ImmergencyPhoneViewHolder(@NonNull View itemView) {
             super(itemView);
             nameView = itemView.findViewById(R.id.tvContactText);
 
             numberView = itemView.findViewById(R.id.tvNumberText);
-            this.onItemListener = onItemListener;
+            numberView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(Intent.ACTION_CALL);
+                    intent.setData(Uri.parse("tel:"+numberView.getText().toString()));
+                }
+            });
+
         }
 
-        @Override
-        public void onItemClick(int position) {
-            onItemListener.onItemClick(getAdapterPosition());
-        }
     }
 }
