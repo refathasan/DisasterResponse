@@ -43,5 +43,5 @@ public interface IApiService {
     @GET("DisasterApi/getAllNews")
     Call<List<NewsModel>>getNewsData();
     @GET("DisasterApi/getUserByMobileNumber/{number}")
-    Call<List<UserModel>>getUser(@Path("number") String number);
+    Call<UserModel>getUser(@Path("number") String number);
 }

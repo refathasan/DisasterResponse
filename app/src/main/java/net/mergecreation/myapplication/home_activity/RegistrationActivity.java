@@ -13,5 +13,6 @@ public class RegistrationActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+        activateToolbar("রেজিস্ট্রেশন");
     }
 }

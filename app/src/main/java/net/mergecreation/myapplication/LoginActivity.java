@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 import net.mergecreation.myapplication.base.BaseActivity;
@@ -14,6 +15,7 @@ import net.mergecreation.myapplication.home_activity.RegistrationActivity;
 import net.mergecreation.myapplication.model.UserModel;
 import net.mergecreation.myapplication.network.ApiIClientInstance;
 import net.mergecreation.myapplication.network.IApiService;
+import net.mergecreation.myapplication.utils.IntentStrings;
 
 import java.util.List;
 
@@ -49,18 +51,25 @@ public class LoginActivity extends BaseActivity {
     }
 
     private void getUserData(final String phoneNumber) {
-        Call<List<UserModel>> call = iApiService.getUser(phoneNumber);
-        call.enqueue(new Callback<List<UserModel>>() {
+        Call<UserModel> call = iApiService.getUser(phoneNumber);
+        call.enqueue(new Callback<UserModel>() {
             @Override
-            public void onResponse(Call<List<UserModel>> call, Response<List<UserModel>> response) {
-                if (response.isSuccessful()) {
-                    if(response.body().)
+            public void onResponse(Call<UserModel> call, Response<UserModel> response) {
+                if(response.isSuccessful())
+                {
+                    //Toast.makeText(LoginActivity.this, response.body().toString(), Toast.LENGTH_SHORT).show();
+                    userModel = response.body();
+                    intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    intent.putExtra(IntentStrings.USER_NAME,userModel.getName());
+                    startActivity(intent);
                 }
             }
 
             @Override
-            public void onFailure(Call<List<UserModel>> call, Throwable t) {
+            public void onFailure(Call<UserModel> call, Throwable t) {
                 call.cancel();
+                intent = new Intent(LoginActivity.this, RegistrationActivity.class);
+                startActivity(intent);
             }
         });
     }
