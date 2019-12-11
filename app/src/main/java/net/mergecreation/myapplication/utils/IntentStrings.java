@@ -29,7 +29,6 @@ public class IntentStrings {
     public static String WORD_EXTRA ="WORD_ID";
 
 
-    public static  String USER_ID ="USER_ID";
-    public static  String USER_NAME ="USER_NAME";
+
 
 }

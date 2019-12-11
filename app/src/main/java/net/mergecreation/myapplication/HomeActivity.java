@@ -1,9 +1,13 @@
 package net.mergecreation.myapplication;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import net.mergecreation.myapplication.base.BaseActivity;
 
@@ -13,10 +17,19 @@ import net.mergecreation.myapplication.home_activity.HelpLineTypeActivity;
 import net.mergecreation.myapplication.home_activity.HotlineActivity;
 import net.mergecreation.myapplication.home_activity.NewsActivity;
 import net.mergecreation.myapplication.home_activity.OthersActivity;
+import net.mergecreation.myapplication.utils.IntentStrings;
+import net.mergecreation.myapplication.utils.PreferenceUtils;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeActivity extends BaseActivity {
     private Button btnDisasterInfo, btnAskForHelp, btnImportantPhoneNumber, btnHotLine, btnNews, btnOthers;
     private Intent intent;
+    CircleImageView imageView;
+    TextView textView;
+    //public static final String MyPREFERENCES = "myprefs";
+
+   // SharedPreferences sharedPreferences;
 
 
 
@@ -25,11 +38,22 @@ public class HomeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         activateToolbar("দূর্যোগ সেবা");
+        //sharedPreferences = getSharedPreferences(IntentStrings.MyPREFERENCES, Context.MODE_PRIVATE);
         btnDisasterInfo = findViewById(R.id.btn_disaster_info);
         btnAskForHelp = findViewById(R.id.btn_disaster_ask_help);
         btnImportantPhoneNumber = findViewById(R.id.btn_important_phn);
         btnHotLine = findViewById(R.id.btn_hotline);
         btnNews = findViewById(R.id.btn_news);
+        imageView = findViewById(R.id.imageView);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(HomeActivity.this, LogoutActivity.class);
+                startActivity(intent);
+            }
+        });
+        textView = findViewById(R.id.nameText);
+        textView.setText(PreferenceUtils.getUserName(this));
         btnOthers = findViewById(R.id.btn_others);
         btnDisasterInfo.setOnClickListener(new View.OnClickListener() {
             @Override

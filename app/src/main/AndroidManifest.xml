@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/app_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".home_activity.RegistrationActivity"></activity>
+        <activity android:name=".LogoutActivity"></activity>
+        <activity android:name=".home_activity.RegistrationActivity" />
         <activity android:name=".home_activity.HelpLineTypeActivity" />
         <activity android:name=".home_activity.PostDisasterDetailsActivity" />
         <activity
