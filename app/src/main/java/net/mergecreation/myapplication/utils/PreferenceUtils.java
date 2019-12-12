@@ -51,7 +51,7 @@ public class PreferenceUtils {
     public static boolean saveUserAddress(String userAddress, Context context) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor prfsEditor = preferences.edit();
-        prfsEditor.putString(Constants.USER_ID, userAddress);
+        prfsEditor.putString(Constants.USER_ADDRESS, userAddress);
         prfsEditor.apply();
         return true;
     }
@@ -62,7 +62,7 @@ public class PreferenceUtils {
      */
     public static String getPhoneNumber(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        return prefs.getString(Constants.USER_MOBILE, null);
+        return prefs.getString(Constants.USER_MOBILE, "");
     }
 
     /**
@@ -71,7 +71,7 @@ public class PreferenceUtils {
      */
     public static String getUserName(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        return prefs.getString(Constants.USER_NAME, null);
+        return prefs.getString(Constants.USER_NAME, "");
     }
 
     /**
@@ -80,7 +80,7 @@ public class PreferenceUtils {
      */
     public static String getUserId(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        return prefs.getString(Constants.USER_ID, null);
+        return prefs.getString(Constants.USER_ID, "");
     }
 
     /**

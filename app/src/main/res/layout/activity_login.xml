@@ -17,7 +17,7 @@
            android:layout_height="wrap_content"
            android:id="@+id/edt_mbl_number"
            android:hint="@string/mbl_number"
-           android:fontFamily="@font/punarbhaba"
+
            android:textColorHint="@color/colorAccent"
            android:textAlignment="center"/>
         <Button

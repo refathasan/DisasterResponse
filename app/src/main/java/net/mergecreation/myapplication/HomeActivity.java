@@ -39,6 +39,7 @@ public class HomeActivity extends BaseActivity {
         setContentView(R.layout.activity_home);
         activateToolbar("দূর্যোগ সেবা");
         //sharedPreferences = getSharedPreferences(IntentStrings.MyPREFERENCES, Context.MODE_PRIVATE);
+
         btnDisasterInfo = findViewById(R.id.btn_disaster_info);
         btnAskForHelp = findViewById(R.id.btn_disaster_ask_help);
         btnImportantPhoneNumber = findViewById(R.id.btn_important_phn);
@@ -101,5 +102,15 @@ public class HomeActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
+
+        if(PreferenceUtils.getUserId(this)==null || PreferenceUtils.getUserId(this).equals(""))
+        {
+            intent = new Intent(HomeActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        }else
+        {
+            return;
+        }
     }
 }

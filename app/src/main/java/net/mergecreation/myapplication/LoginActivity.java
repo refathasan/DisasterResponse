@@ -76,15 +76,7 @@ public class LoginActivity extends BaseActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if(PreferenceUtils.getUserId(this)!=null || !PreferenceUtils.getUserId(this).equals(""))
-        {
-            intent = new Intent(LoginActivity.this, HomeActivity.class);
-            startActivity(intent);
-            finish();
-        }else
-        {
-            return;
-        }
+
     }
 
     private void getUserData(final String phoneNumber) {
@@ -111,6 +103,7 @@ public class LoginActivity extends BaseActivity {
                     PreferenceUtils.saveUserName(userModel.getName(), LoginActivity.this);
                     intent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);
+                    finish();
 
                 }
             }
@@ -120,6 +113,7 @@ public class LoginActivity extends BaseActivity {
                 call.cancel();
                 intent = new Intent(LoginActivity.this, RegistrationActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

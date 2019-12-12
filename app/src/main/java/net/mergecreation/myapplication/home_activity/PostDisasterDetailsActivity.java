@@ -18,6 +18,7 @@ import net.mergecreation.myapplication.model.DisasterInformationResponse;
 import net.mergecreation.myapplication.network.ApiIClientInstance;
 import net.mergecreation.myapplication.network.IApiService;
 import net.mergecreation.myapplication.utils.IntentStrings;
+import net.mergecreation.myapplication.utils.PreferenceUtils;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -62,7 +63,7 @@ public class PostDisasterDetailsActivity extends BaseActivity {
                     progressDoalog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
                     // show it
                     progressDoalog.show();
-                    postDisasterInformation(disasterTitle,inputData,disasterTypeId,"",divisionId,districtId,upozilaId,unionId,wordId,11);
+                    postDisasterInformation(disasterTitle,inputData,disasterTypeId,"",divisionId,districtId,upozilaId,unionId,wordId, Integer.valueOf(PreferenceUtils.getUserId(PostDisasterDetailsActivity.this)));
                 }
                 else
                 {

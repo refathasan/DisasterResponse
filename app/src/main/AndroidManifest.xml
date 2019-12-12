@@ -13,10 +13,18 @@
         android:roundIcon="@mipmap/app_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LogoutActivity"></activity>
-        <activity android:name=".home_activity.RegistrationActivity" />
-        <activity android:name=".home_activity.HelpLineTypeActivity" />
-        <activity android:name=".home_activity.PostDisasterDetailsActivity" />
+        <activity
+            android:name=".LogoutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home_activity.RegistrationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home_activity.HelpLineTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home_activity.PostDisasterDetailsActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".home_activity.SelectLocationActivity"
             android:screenOrientation="portrait" />
@@ -40,9 +48,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".HomeActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".LoginActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -50,6 +55,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
