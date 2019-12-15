@@ -32,6 +32,8 @@ public class LoginActivity extends BaseActivity {
     Intent intent = null;
     IApiService iApiService;
     UserModel userModel;
+    String userPhoneNumber="";
+    String userNumber ="";
     // SharedPreferences sharedpreferences;
     //SharedPreferences.Editor editor;
 
@@ -46,23 +48,25 @@ public class LoginActivity extends BaseActivity {
         edtPhoneNumber = findViewById(R.id.edt_mbl_number);
         // sharedpreferences = getSharedPreferences(IntentStrings.MyPREFERENCES, Context.MODE_PRIVATE);
 
-            loginButton.setOnClickListener(new View.OnClickListener() {
+            /*loginButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                /*intent=new Intent(LoginActivity.this,HomeActivity.class);
+                *//*intent=new Intent(LoginActivity.this,HomeActivity.class);
                 startActivity(intent);
-                finish();*/
+                finish();*//*
                     getUserData(edtPhoneNumber.getText().toString());
                 }
             });
-
+*/
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 /*intent=new Intent(LoginActivity.this,HomeActivity.class);
                 startActivity(intent);
                 finish();*/
-                getUserData(edtPhoneNumber.getText().toString());
+                userPhoneNumber = edtPhoneNumber.getText().toString();
+                userNumber= userPhoneNumber.replace("+","");
+                getUserData(userNumber);
             }
         });
 
