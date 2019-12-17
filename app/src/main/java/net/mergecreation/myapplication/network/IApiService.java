@@ -7,6 +7,7 @@ import net.mergecreation.myapplication.model.HelpLineCategoryTypeModel;
 import net.mergecreation.myapplication.model.HelpLineModel;
 import net.mergecreation.myapplication.model.NewsModel;
 import net.mergecreation.myapplication.model.UserModel;
+import net.mergecreation.myapplication.model.UserRegistrationModel;
 
 import java.util.List;
 
@@ -44,4 +45,9 @@ public interface IApiService {
     Call<List<NewsModel>>getNewsData();
     @GET("DisasterApi/getUserByMobileNumber/{number}")
     Call<UserModel>getUser(@Path("number") String number);
+    @FormUrlEncoded
+    @POST("DisasterApi/userInsert")
+    Call<UserRegistrationModel>registerUser(@Field("name") String Name,
+                                            @Field("mobile_number") String mobileNumber,
+                                            @Field("address") String address);
 }

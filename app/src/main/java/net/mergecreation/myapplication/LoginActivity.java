@@ -1,26 +1,17 @@
 package net.mergecreation.myapplication;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 
 import net.mergecreation.myapplication.base.BaseActivity;
-import net.mergecreation.myapplication.home_activity.RegistrationActivity;
 import net.mergecreation.myapplication.model.UserModel;
 import net.mergecreation.myapplication.network.ApiIClientInstance;
 import net.mergecreation.myapplication.network.IApiService;
-import net.mergecreation.myapplication.utils.IntentStrings;
 import net.mergecreation.myapplication.utils.PreferenceUtils;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;

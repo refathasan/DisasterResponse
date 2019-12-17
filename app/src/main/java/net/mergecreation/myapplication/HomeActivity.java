@@ -51,6 +51,7 @@ public class HomeActivity extends BaseActivity {
             public void onClick(View v) {
                 intent = new Intent(HomeActivity.this, LogoutActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         textView = findViewById(R.id.nameText);
